@@ -11,7 +11,7 @@ import { AiOutlineSecurityScan } from 'react-icons/ai';
 import { MdInsights } from 'react-icons/md';
 
 const Header = () => {
-  const [activeTab, setActiveTab] = useState('Code');
+  const [activeTab, setActiveTab] = useState('PullRequests');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const tabs = [
