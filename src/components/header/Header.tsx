@@ -8,7 +8,7 @@ import { IoCodeOutline, IoGitPullRequestOutline } from 'react-icons/io5';
 import { VscIssues } from 'react-icons/vsc';
 import { GoCommentDiscussion } from 'react-icons/go';
 import { AiOutlineSecurityScan } from 'react-icons/ai';
-import { MdInsights } from 'react-icons/md';
+import { MdInsights, MdOutlineRollerShadesClosed } from 'react-icons/md';
 
 const Header = () => {
   const [activeTab, setActiveTab] = useState('PullRequests');
@@ -38,8 +38,10 @@ const Header = () => {
           {/* Top Row */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center space-x-2">
-              <span className="text-lg font-semibold text-gray-900">shadcn-ui/ui</span>
-              <span className="px-2 py-0.5 text-xs font-medium text-gray-600 bg-gray-100 rounded-full">
+            <MdOutlineRollerShadesClosed />
+              <a  href="" className="text-lg font-semibold text-blue-500 hover:underline">shadcn-ui</a>
+              <a className="text-lg font-semibold text-blue-500 hover:underline" href="">/ui</a>
+              <span className="px-2 py-0.5 text-xs font-medium text-gray-600 bg-gray-200 rounded-full">
                 Public
               </span>
             </div>
