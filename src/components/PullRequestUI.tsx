@@ -5,15 +5,19 @@ import CommitHistoryTab from "./Tabs/CommitHistoryTab";
 import FileChangesTab from "./Tabs/FileChangesTab";
 import { IoIosGitMerge } from "react-icons/io";
 import "../App.css"
+import { BiConversation } from "react-icons/bi";
+import { IoGitCommitOutline } from "react-icons/io5";
+import { PiCheckSquareOffsetBold } from "react-icons/pi";
+import { LuFileSliders } from "react-icons/lu";
 const PullRequestUI = () => {
   const [activeTab, setActiveTab] = useState('Conversation');
 
   // Tab configuration
   const tabs = [
-    { id: 'conversation', label: 'Conversation' },
-    { id: 'commits', label: 'Commits' },
-    { id: 'checks', label: 'Checks' },
-    { id: 'files', label: 'Files changed' }
+    { id: 'conversation', label: <div className="flex items-center"><BiConversation className="mr-1" /> <span>Conversation</span></div> },
+    { id: 'commits', label: <div className="flex items-center"><IoGitCommitOutline className="mr-1" /> <span>Commits</span></div> },
+    { id: 'checks', label: <div className="flex items-center"><PiCheckSquareOffsetBold className="mr-1" /><span>Checks</span></div>  },
+    { id: 'files', label: <div className="flex items-center"><LuFileSliders className="mr-1" /> <span>Files changed</span></div> }
   ];
 
   return (
@@ -31,7 +35,7 @@ const PullRequestUI = () => {
         </div>
 
         <div className="flex items-center text-sm text-gray-600 space-x-4 pr-header">
-          <button className='mt-2 text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-4 py-1 text-center me-2 mb-2'>
+          <button className='mt-2 text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-full text-sm px-4 py-1 text-center me-2 mb-2'>
             <div className="flex items-center">
           <IoIosGitMerge /> <span>merged</span>
             </div></button>
