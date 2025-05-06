@@ -1,23 +1,29 @@
 import { useState } from 'react';
 import PullRequestUI from '../PullRequestUI';
 import { SiGithubsponsors } from 'react-icons/si';
-import { IoIosNotificationsOutline } from 'react-icons/io';
+import { IoIosNotificationsOutline, IoMdPlayCircle } from 'react-icons/io';
 import { FaCodeFork } from 'react-icons/fa6';
 import { CiStar } from 'react-icons/ci';
+import { IoCodeOutline, IoGitPullRequestOutline } from 'react-icons/io5';
+import { VscIssues } from 'react-icons/vsc';
+import { GoCommentDiscussion } from 'react-icons/go';
+import { AiOutlineSecurityScan } from 'react-icons/ai';
+import { MdInsights } from 'react-icons/md';
 
 const Header = () => {
   const [activeTab, setActiveTab] = useState('Code');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const tabs = [
-    { id: 'Code', name: 'Code', count: null },
-    { id: 'Issues', name: 'Issues', count: 555 },
-    { id: 'PullRequests', name: 'Pull requests', count: 808 },
-    { id: 'Discussions', name: 'Discussions', count: null },
-    { id: 'Actions', name: 'Actions', count: null },
-    { id: 'Security', name: 'Security', count: null },
-    { id: 'Insights', name: 'Insights', count: null },
+    { id: 'Code', name: <><IoCodeOutline className="mr-1" /> Code</>, count: null },
+    { id: 'Issues', name: <><VscIssues className="mr-1" /> Issues</>, count: 555 },
+    { id: 'PullRequests', name: <><IoGitPullRequestOutline className="mr-1" /> Pull requests</>, count: 808 },
+    { id: 'Discussions', name: <><GoCommentDiscussion className="mr-1" /> Discussions</>, count: null },
+    { id: 'Actions', name: <><IoMdPlayCircle className="mr-1" /> Actions</>, count: null },
+    { id: 'Security', name: <><AiOutlineSecurityScan className="mr-1" /> Security</>, count: null },
+    { id: 'Insights', name: <><MdInsights className="mr-1" /> Insights</>, count: null },
   ];
+  
 
   const handleTabClick = (tabId: string) => {
     setActiveTab(tabId);
@@ -62,14 +68,14 @@ const Header = () => {
           </div>
 
           {/* Tabs */}
-          <nav className="flex space-x-8">
+          <nav className="flex gap-3">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => handleTabClick(tab.id)}
                 className={`inline-flex items-center px-1 py-2 text-sm font-medium ${
                   activeTab === tab.id
-                    ? 'text-blue-600 border-b-2 border-blue-600'
+                    ? 'text-blue-600 border-b-2 border-orange-400'
                     : 'text-gray-500 hover:text-gray-700'
                 }`}
               >
